@@ -21,7 +21,6 @@ def save_postgres_log_params(host, port, username, password, database):
     for param in postgres_log_params:
         f.write(param+'\n')
     f.close()
-    os.system("chainlit run chainlit_app.py -w")
     return f"Connected to PostgreSQL server {host}, database {database} as {username}"
 
 
@@ -47,6 +46,8 @@ def index():
         result = save_postgres_log_params(
             host, port, username, password, database)
         print(result)
+
+        os.system("chainlit run chainlit_app.py -w")
         return render_template('result.html', result=result)
     return render_template('index.html',
                            host=DEFAULT_HOST,
