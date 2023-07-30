@@ -1,2 +1,3 @@
 chainlit/src/apikey.py
 streamlit/src/apikey.py
+streamlit/src/.streamlit/secrets.toml

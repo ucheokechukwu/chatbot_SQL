@@ -1,5 +1,4 @@
 import os
-from apikey import apikey
 import streamlit as st
 from langchain.llms import OpenAI
 
@@ -10,9 +9,9 @@ postgres_log = dict(host='lhl-data-bootcamp.crzjul5qln0e.ca-central-1.rds.amazon
                     password='lhl_student',
                     database='postgres')
 chat_model = 'GPT3.5'
+API_KEY = st.secrets["apikey"]
 
-
-def generate_llm(chat_model=chat_model, API_KEY=apikey):
+def generate_llm(chat_model=chat_model, API_KEY=API_KEY):
     """generates llm"""
     model_name = 'gpt-4' if chat_model == 'GPT4' else 'gpt-3.5-turbo'
     print(f"Chat GPT Model is {model_name}.")
