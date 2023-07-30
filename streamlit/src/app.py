@@ -89,6 +89,8 @@ db_chain = SQLDatabaseChain(
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "last_valid" not in st.session_state:
+    st.session_state.last_valid = " "
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -102,7 +104,8 @@ if prompt := st.chat_input("Type in your SQL question here"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     try: 
-        response = db_chain.run(prompt)
+        response = db_chain.run(st.session_state.last_valid + prompt)
+        st.session_state.last_valid = response + ' '
     except:
         response = f"""I cannot find a suitable answer from the SQLChat. But the main ChatBot thinks:
                     {chain.run(prompt)}"""
