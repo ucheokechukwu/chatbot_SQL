@@ -1,11 +1,9 @@
 import chainlit as cl
 from chainlit import user_session
 from langchain import PromptTemplate
-
-import environ
-env = environ.Env()
-environ.Env.read_env()
-OPENAI_API_KEY = env('OPENAI_API_KEY')
+# API Key
+import os
+from apikey import OPENAI_API_KEY
 
 DEFAULT_HOST = 'localhost'
 DEFAULT_PORT = '5432'
@@ -15,7 +13,7 @@ DEFAULT_DATABASE = 'northwind'
 
 # reading postgres server login details
 try:
-    f = open('postgres_login', 'r')
+    f = open('../data/postgres_login', 'r')
     postgres_log_params = f.read().splitlines()
     f.close()
 except:
@@ -24,7 +22,7 @@ except:
 
 # reading chat_model version
 try:
-    f = open('chat_gpt_', 'r')
+    f = open('../data/chat_gpt_', 'r')
     chat_model = f.read()
     f.close()
 except:
@@ -33,9 +31,10 @@ except:
 model_name = 'gpt-4' if chat_model == 'GPT4' else 'gpt-3.5-turbo'
 print(f"Chat GPT Model is {model_name}.")
 
+
 def generate_llm(model_name=model_name, API_KEY=OPENAI_API_KEY):
-    ### generates the LLM, only implemented with OpenAI for now
-  
+    # generates the LLM, only implemented with OpenAI for now
+
     from langchain.chat_models import ChatOpenAI
     llm = ChatOpenAI(
         openai_api_key=OPENAI_API_KEY,
@@ -53,12 +52,13 @@ def generate_llm(model_name=model_name, API_KEY=OPENAI_API_KEY):
 
     return llm
 
+
 def connect_db(host=DEFAULT_HOST,
                port=DEFAULT_PORT,
                username=DEFAULT_USERNAME,
                password=DEFAULT_PASSWORD,
                database=DEFAULT_DATABASE):
-                 
+
     # post gres SQL setup
     from langchain.sql_database import SQLDatabase
     db = SQLDatabase.from_uri(

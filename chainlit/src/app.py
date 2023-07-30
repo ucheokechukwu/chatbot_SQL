@@ -13,12 +13,11 @@ DEFAULT_DATABASE = 'northwind'
 
 
 def save_postgres_log_params(host, port, username, password, database):
-    ### save the new postgres login settings
-    ### 
-    
+    ### save the new postgres login settings###
+
     postgres_log_params = [host, port, username,
                            password, database]
-    f = open('postgres_login', 'w')
+    f = open('../data/postgres_login', 'w')
     for param in postgres_log_params:
         f.write(param+'\n')
     f.close()
@@ -27,9 +26,8 @@ def save_postgres_log_params(host, port, username, password, database):
 
 
 def save_chat_gpt(chat_gpt_select):
-    ### saves the chatGPT login settings
-    ###
-    f = open('chat_gpt_', 'w')
+    ### saves the chatGPT login settings ###
+    f = open('../data/chat_gpt_', 'w')
     f.write(chat_gpt_select)
     f.close()
 
@@ -56,9 +54,6 @@ def index():
                            username=DEFAULT_USERNAME,
                            password=DEFAULT_PASSWORD,
                            database=DEFAULT_DATABASE)
-
-
-
 
 
 if __name__ == '__main__':
