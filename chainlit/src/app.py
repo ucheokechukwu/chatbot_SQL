@@ -5,10 +5,10 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Default PostgreSQL server credentials
-DEFAULT_HOST = 'lhl-data-bootcamp.crzjul5qln0e.ca-central-1.rds.amazonaws.com'
+DEFAULT_HOST = 'localhost'
 DEFAULT_PORT = '5432'
-DEFAULT_USERNAME = 'lhl_student'
-DEFAULT_PASSWORD = 'lhl_student'
+DEFAULT_USERNAME = 'student'
+DEFAULT_PASSWORD = 'student'
 DEFAULT_DATABASE = 'postgres'
 
 
