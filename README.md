@@ -41,6 +41,8 @@ The demo version of this is hosted on an Ubuntu AWS EC2 instance.
 
 [**SQL Chabot with Chainlit**](http://ec2-3-21-56-191.us-east-2.compute.amazonaws.com:8000)
 
+<img src="images/chainlit_demo.png" width="300">
+
 Or locally, from Terminal in the `chainlit/src/` directory:
 
 `python app.py`
