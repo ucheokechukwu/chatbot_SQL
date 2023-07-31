@@ -94,7 +94,7 @@ def main():
         llm=llm,
         database=db,
         verbose=False,
-        # memory=memory,
+        memory=memory,
     )
     # Store the chain in the user session
     cl.user_session.set("db_chain", db_chain)
@@ -105,6 +105,7 @@ async def main(message: str):
     # Retrieve the chain from the user session
     db_chain = cl.user_session.get("db_chain")
     # Call the chain asynchronously
+
     res = await cl.make_async(db_chain)(message,
                                         callbacks=[cl.LangchainCallbackHandler(
                                             stream_final_answer=True,
