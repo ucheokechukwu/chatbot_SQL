@@ -19,7 +19,7 @@ The objective of this project was to create an LLM powered chatbot to query an S
 
 ## Live Demos
 
-**Note** that both demos are running on a free Open API account and therefore have limited (i.e. slow) responses of 3 requests per minute. Alternatively, you can clone the github repo, install the requiments (please note the versions), provide premium API Keys, and run from their source directories.
+**Note** that both demos are running on a free Open API account and therefore have limits of 3 calls per minute and a limit of 200 calls per day. Alternatively, you can clone the github repo, install the requiments (please note the versions), provide premium API Keys, and run from their source directories.
 
 ### StreamLit
 
@@ -33,7 +33,7 @@ Or locally, from Terminal in the `streamlit/src/` directory:
 
 ### ChainLit
 
-The demo version of this is hosted on an Ubuntu AWS E2 instance.
+The demo version of this is hosted on an Ubuntu AWS EC2 instance.
 
 [**Postgres Server Connection Page**](http://ec2-3-21-56-191.us-east-2.compute.amazonaws.com:5000/) - This is the page to either enter your postgres server connection details or accept the provided default values. It should immediately redirect you to the Chatbot. However, if that doesn't work, then please click the link below.
 
@@ -49,4 +49,4 @@ Or locally, from Terminal in the `chainlit/src/` directory:
 
 - In my experience, Streamlit is better for chatbot implementation. The framework has more options, is more user-friendly, and provides a rich documentation library for support. Future improvements to this will be done on this platform.
 
-- Future work will include integrating various methods of connecting to SQl databases and other database tools; and implementing vector embeddings.
+- Future work will include integrating various methods of connecting to SQL databases and other database tools; and implementing vector embeddings.
