@@ -6,11 +6,11 @@ import streamlit as st
 from langchain.llms import OpenAI
 
 # default values
-postgres_log = dict(host='lhl-data-bootcamp.crzjul5qln0e.ca-central-1.rds.amazonaws.com',
-                    port='5432',
-                    username='lhl_student',
-                    password='lhl_student',
-                    database='postgres')
+postgres_log = dict(st.secrets.db_credentials)
+print("postgres log", type(postgres_log))
+print(postgres_log)
+
+
 chat_model = 'GPT3.5'
 API_KEY = st.secrets["apikey"]
 
