@@ -51,4 +51,8 @@ Or locally, from Terminal in the `chainlit/src/` directory:
 
 - In my experience, Streamlit is better for chatbot implementation. The framework has more options, is more user-friendly, and provides a rich documentation library for support. Future improvements to this will be done on this platform.
 
-- Future work will include integrating various methods of connecting to SQL databases and other database tools; and implementing vector embeddings.
+- Future work will include:
+
+1. integrating various methods of connecting to SQL databases and other database tools;
+2. implementing vector embeddings;
+3. improve functionality of the chatbot to: creating and modifying tables, and visualizations
