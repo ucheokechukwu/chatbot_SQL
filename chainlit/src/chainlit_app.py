@@ -7,9 +7,9 @@ from apikey import OPENAI_API_KEY
 
 DEFAULT_HOST = 'localhost'
 DEFAULT_PORT = '5432'
-DEFAULT_USERNAME = 'student'
-DEFAULT_PASSWORD = 'student'
-DEFAULT_DATABASE = 'northwind'
+DEFAULT_USERNAME = 'lhl_student'
+DEFAULT_PASSWORD = 'lhl_student'
+DEFAULT_DATABASE = 'postgres'
 
 # reading postgres server login details
 try:
