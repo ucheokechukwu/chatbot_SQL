@@ -45,7 +45,7 @@ st.title("SQL ChatBot")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "buffer_memory" not in st.session_state:
-    st.session_state.history = None
+    st.session_state.buffer_memory= None
 if "last_valid" not in st.session_state:
     st.session_state.last_valid = " "
 if "visibility" not in st.session_state:
