@@ -25,7 +25,7 @@ The objective of this project was to create an LLM powered chatbot to query an S
 
 The streamlit app is hosted online here: [**SQL Chatbot with Streamlit**](https://chatbotsql.streamlit.app/).
 
-![streamlitdemo](images/streamlit_demo.png)
+![streamlitdemo](images/streamlit_chinook_demo.png)
 
 Or locally, from Terminal in the `streamlit/src/` directory:
 
