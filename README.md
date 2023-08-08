@@ -35,11 +35,11 @@ Or locally, from Terminal in the `streamlit/src/` directory:
 
 The demo version of this is hosted on an Ubuntu AWS EC2 instance.
 
-[**Postgres Server Connection Page**](http://ec2-3-21-56-191.us-east-2.compute.amazonaws.com:5000/) - This is the page to either enter your postgres server connection details or accept the provided default values. It should immediately redirect you to the Chatbot. However, if that doesn't work, then please click the link below.
+[**Postgres Server Connection Page**](http://ec2-18-188-145-171.us-east-2.compute.amazonaws.com:5000/) - This is the page to either enter your postgres server connection details or accept the provided default values. It should immediately redirect you to the Chatbot. However, if that doesn't work, then please click the link below.
 
 <img src="images/chainlit_demo_landing.png" width="300">
 
-[**SQL Chabot with Chainlit**](http://ec2-3-21-56-191.us-east-2.compute.amazonaws.com:8000)
+[**SQL Chabot with Chainlit**](http://ec2-18-188-145-171.us-east-2.compute.amazonaws.com:8000)
 
 <img src="images/chainlit_demo.png" width="300">
 
