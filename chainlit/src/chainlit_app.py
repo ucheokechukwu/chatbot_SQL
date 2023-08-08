@@ -58,9 +58,9 @@ def main():
 
     memory = ConversationBufferMemory(
         memory_key="chat_history", return_messages=True)
-    db_chain = SQLDatabaseChain(
+    db_chain = SQLDatabaseChain.from_llm(
         llm=llm,
-        database=db,
+        db=db,
         verbose=False,
         memory=memory,
     )
