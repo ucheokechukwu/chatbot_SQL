@@ -7,9 +7,9 @@ app = Flask(__name__)
 # Default PostgreSQL server credentials
 DEFAULT_HOST = 'localhost'
 DEFAULT_PORT = '5432'
-DEFAULT_USERNAME = 'student'
-DEFAULT_PASSWORD = 'student'
-DEFAULT_DATABASE = 'postgres'
+DEFAULT_USERNAME = 'postgres'
+DEFAULT_PASSWORD = '1234'
+DEFAULT_DATABASE = 'realestate'
 
 
 def save_postgres_log_params(host, port, username, password, database):
@@ -58,4 +58,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=3000)
