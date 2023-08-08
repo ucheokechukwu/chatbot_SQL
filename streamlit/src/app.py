@@ -40,7 +40,7 @@ def connect_db(postgres_log):
     return db
 
 # streamlit framework and state variables
-st.title("SQL ChatBot")
+
 # Initialize chat history and sidebar visibility
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -56,7 +56,12 @@ if 'chat_model' not in st.session_state:
 # initialize memory
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = ""   
-    
+# if 'sidebar_state' not in st.session_state:
+#     st.session_state.sidebar_state = 'collapsed'
+
+
+# st.set_page_config(initial_sidebar_state=st.session_state.sidebar_state)  
+st.title("SQL ChatBot")  
     
     
     
@@ -71,13 +76,21 @@ with st.sidebar:
         st.write("Postgres SQL Server settings")
         postgres_input = postgres_log.copy()
         for key in postgres_log.keys():
-            postgres_input[key] = st.text_input(
+            if key == 'password':
+                postgres_input[key] = st.text_input(
+                key, disabled=st.session_state.disabled, type="password")
+            else:
+                postgres_input[key] = st.text_input(
                 key, disabled=st.session_state.disabled)
         submitted = st.form_submit_button(
             "Submit", disabled=st.session_state.disabled)
         if submitted:
             st.session_state.postgres_log = postgres_input
+#             st.session_state.sidebar_state = 'collapsed' if st.session_state.sidebar_state == 'expanded' else 'expanded'
 
+
+            
+            
 
 # Setup the database chain
 QUERY = """
@@ -101,9 +114,9 @@ prompt = PromptTemplate(template=QUERY,
                         
 db = connect_db(st.session_state.postgres_log)
 llm = generate_llm(chat_model=st.session_state.chat_model)
-db_chain = SQLDatabaseChain(
+db_chain = SQLDatabaseChain.from_llm(
     llm=llm,
-    database=db,
+    db=db,
     verbose=True)
 
 # chatbot

@@ -3,3 +3,6 @@ streamlit/src/apikey.py
 streamlit/src/.streamlit/secrets.toml
 streamlit/src/BACKUP
 streamtlit/src/Untitled.ipynb
+chainlit/src/.env
+chainlit/.chainlit
+chainlit/src/.chainlit/.langchain.db
