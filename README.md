@@ -1,4 +1,4 @@
-# chatbot_SQL
+# SQL Chatbot
 
 The objective of this project was to create an LLM powered chatbot to query an SQL database. Two versions of the app were implemented using the **Streamlit** and **Chainlit** frameworks.
 
